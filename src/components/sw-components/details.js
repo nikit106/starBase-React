@@ -26,6 +26,8 @@ const PersonDetails = ({ itemId }) => {
         <Record field="eyeColor" label="Eye Color" />
 
       </ItemDetails>
+
+      
     )
 }
 
