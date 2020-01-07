@@ -1,6 +1,8 @@
 import React from 'react';
+import propTypes from 'prop-types'
 
 import './item-list.css';
+import SwapiService from '../../services/swapi-service';
 
 const ItemList = (props) => {
 
@@ -24,5 +26,17 @@ const ItemList = (props) => {
       </ul>
     );
   }
+
+  ItemList.defaultProps = {
+    onItemSelected: () => {}
+  };
+
+  ItemList.propTypes = {
+    onItemSelected: propTypes.func,
+    data: propTypes.arrayOf(propTypes.object).isRequired,
+    children: propTypes.func.isRequired
+  }
+
+  const { getAllPeople } = new SwapiService();
 
 export default ItemList
